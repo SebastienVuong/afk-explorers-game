@@ -4,7 +4,7 @@ interface IBaseScreenProps {
 
 export const BaseScreen = ({ children }: IBaseScreenProps) => {
   return (
-    <div className="container-fluid" style={{ backgroundColor: "coral" }}>
+    <div className="container-fluid" style={{ backgroundColor: "black" }}>
       {children}
     </div>
   )

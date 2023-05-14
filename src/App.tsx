@@ -9,7 +9,7 @@ import { Inn } from './pages/inn.page'
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" style={{ height: "100%", width: "100%", backgroundColor: "lightyellow" }}>
       <NavBar />
       <BrowserRouter>
         <Routes>

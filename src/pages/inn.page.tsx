@@ -1,4 +1,4 @@
-import { BaseScreen } from "../components/base-screen.component"
+import { BaseScreen } from "../shared/base-screen.component"
 
 export const Inn = () => {
   return (

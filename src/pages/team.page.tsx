@@ -1,5 +1,5 @@
 import { useAtom } from "jotai"
-import { BaseScreen } from "../components/base-screen.component"
+import { BaseScreen } from "../shared/base-screen.component"
 import { heroesAtom } from "../atoms/heroes.atom"
 import { goldAtom } from "../atoms/gold.atom"
 

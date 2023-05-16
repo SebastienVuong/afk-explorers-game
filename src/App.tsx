@@ -1,6 +1,6 @@
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { NavBar } from './components/nav-bar.component'
+import { NavBar } from './shared/nav-bar.component'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { DefaultPage } from './DefaultPage'
 import { Team } from './pages/team.page'

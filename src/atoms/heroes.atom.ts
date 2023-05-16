@@ -1,6 +1,6 @@
 import { atom, useAtom } from "jotai"
 
-interface IHero {
+export interface IHero {
   id: number
   name: string
 }

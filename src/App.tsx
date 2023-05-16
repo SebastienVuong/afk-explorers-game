@@ -1,4 +1,5 @@
 import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
 import { NavBar } from './components/nav-bar.component'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { DefaultPage } from './DefaultPage'
@@ -9,7 +10,7 @@ import { Inn } from './pages/inn.page'
 
 function App() {
   return (
-    <div className="App" style={{ height: "100%", width: "100%", backgroundColor: "lightyellow" }}>
+    <div className="App">
       <NavBar />
       <BrowserRouter>
         <Routes>

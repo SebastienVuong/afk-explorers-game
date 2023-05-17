@@ -6,6 +6,7 @@ import { EmptyShipBody } from "./world.empty-ship.component";
 import { LockerShipBody } from "./world.locked-ship.component";
 import { goldAtom } from "../../atoms/gold.atom";
 import { Title } from "../../shared/title.component";
+import { useAFKHeroEarnings } from "../../hooks/use-afk-hero-earnings.hook";
 
 export const SECONDARY_SHIP_COST = 500;
 
@@ -13,6 +14,8 @@ export const ShipBeta = () => {
   const ship = useAtomValue(shipBetaAtom);
   const gold = useAtomValue(goldAtom)
   const leadingHero = useAtomValue(heroesAtom).find(hero => hero.id === ship.leadingHeroId);
+
+  useAFKHeroEarnings(leadingHero)
 
   const isShipActive = ship.isActive;
 

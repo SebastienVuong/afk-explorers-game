@@ -5,6 +5,9 @@ This game lets you recruit heroes who can lead your ships and earn you more gold
 1. `npm install`
 1. `npm run dev`
 
+## Deployment
+1. `npm install`
+1. `npm run deploy`
 ## Technologies
 1. Project was set up using ViteJS
 1. It uses ReactJS and Typescript

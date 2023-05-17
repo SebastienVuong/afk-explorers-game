@@ -24,6 +24,7 @@ export const HeroCard = ({ hero: { name, id, hp, maxHp, earnings }, onClick, isS
     style={(isDisabled ? { opacity: 0.5 } : {})}
     onClick={onClick}
   >
+    {isSelected && <div className="star"></div>}
     <div className="card-body d-flex flex-column justify-content-around">
       <strong className="card-title">
         {name}

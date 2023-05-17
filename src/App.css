@@ -53,14 +53,13 @@
   width: 300px;
   background-color: sandybrown;
   border-radius: 10px;
-  border: 2px solid orange;
 }
 
 .clickable-card {
   cursor: pointer;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s, box-shadow 0.3s;
-  opacity: 0.9;
+  opacity: 0.85;
 }
 
 .clickable-card:hover, .clickable-card.selected {
@@ -84,3 +83,49 @@
   margin: 10px 0;
 }
 
+.star {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(to bottom, white, gold);
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+  clip-path: polygon(
+    50% 0%,
+    63% 35%,
+    100% 35%,
+    70% 55%,
+    85% 90%,
+    50% 70%,
+    15% 90%,
+    30% 55%,
+    0% 35%,
+    37% 35%
+  );
+  transform: rotate(45deg);
+  opacity: 0.7;
+  animation: shooting-stars 2s infinite;
+}
+
+@keyframes shooting-stars {
+  0% {
+    transform: rotate(0deg) translate(0, 0) scale(1);
+    opacity: 1
+  }
+  25% {
+    transform: rotate(0deg) translate(290px, 0) scale(1.5);
+    opacity: 0.1;
+  }
+  50% {
+    transform: rotate(0deg) translate(290px, 190px) scale(1.5);
+    opacity: 1;
+  }
+  75% {
+    transform: rotate(0deg) translate(0, 190px) scale(1.5);
+    opacity: 0.1;
+  }
+  100% {
+    transform: rotate(0deg) translate(0, 0) scale(1);
+  }
+}

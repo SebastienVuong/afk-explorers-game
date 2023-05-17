@@ -1,7 +1,7 @@
 import { useAtomValue } from "jotai"
 import { BaseScreen } from "../shared/base-screen.component"
 import { heroesAtom } from "../atoms/heroes.atom"
-import { RecruitmentSection } from "./tavern.recruitment.component"
+import { RecruitmentSection } from "./components/tavern.recruitment.component"
 import { RosterSection } from "../shared/roster.component"
 import { Title } from "../shared/title.component"
 

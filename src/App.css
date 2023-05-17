@@ -74,3 +74,13 @@
 .clickable-card:hover:not(.selected) { 
   border-color: yellow;
 }
+
+.boat-container {
+  padding: 50px;
+  width: 500px;
+  background-color: brown;
+  border-bottom-left-radius: 40%;
+  border-bottom-right-radius: 40%;
+  margin: 10px;
+}
+

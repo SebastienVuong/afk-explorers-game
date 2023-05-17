@@ -1,4 +1,4 @@
-import { atom, useAtom } from "jotai"
+import { atom } from "jotai"
 
 export interface IHero {
   id: number

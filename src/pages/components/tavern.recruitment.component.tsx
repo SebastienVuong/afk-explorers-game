@@ -1,9 +1,9 @@
 import { useAtom } from "jotai";
-import { IHero, heroesAtom } from "../atoms/heroes.atom";
+import { IHero, heroesAtom } from "../../atoms/heroes.atom";
 import { Button } from "react-bootstrap";
-import { goldAtom } from "../atoms/gold.atom";
+import { goldAtom } from "../../atoms/gold.atom";
 import { useState } from "react";
-import { generateHero } from "../utils/generate-hero";
+import { generateHero } from "../../utils/generate-hero";
 
 const RECRUITMENT_COST = 100;
 export const RecruitmentSection = () => {

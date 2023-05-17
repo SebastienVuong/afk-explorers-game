@@ -1,0 +1,86 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: left;
+  display: flex;
+  width: 100%;
+}
+
+.App {
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: lightyellow;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.card.list-item-card { 
+  height: 200px;
+  width: 300px;
+  background-color: sandybrown;
+  border-radius: 10px;
+  border: 2px solid orange;
+}
+
+.clickable-card {
+  cursor: pointer;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+  opacity: 0.9;
+}
+
+.clickable-card:hover, .clickable-card.selected {
+  transform: translateY(4px);
+  box-shadow: none;
+  height: 196px;
+  border-width: 5px;
+  opacity: 1;
+}
+
+.clickable-card:hover:not(.selected) { 
+  border-color: yellow;
+}
+
+.boat-container {
+  padding: 50px;
+  width: 500px;
+  background-color: brown;
+  border-bottom-left-radius: 40%;
+  border-bottom-right-radius: 40%;
+  margin: 10px 0;
+}
+

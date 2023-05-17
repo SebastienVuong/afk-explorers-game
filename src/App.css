@@ -72,6 +72,5 @@
 }
 
 .clickable-card:hover:not(.selected) { 
-  /* border: 5px solid #646cff; */
   border-color: yellow;
 }

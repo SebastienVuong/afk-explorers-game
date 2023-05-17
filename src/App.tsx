@@ -1,6 +1,6 @@
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { NavBar } from './shared/nav-bar.component'
+import { NavBar, NavBarLinksEnum } from './shared/nav-bar.component'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { DefaultPage } from './DefaultPage'
 import { Team } from './pages/team.page'
@@ -8,20 +8,26 @@ import { Tavern } from './pages/tavern.page'
 import { World } from './pages/world.page'
 import { Inn } from './pages/inn.page'
 
+const navBarLinkElements: { [key in NavBarLinksEnum]: JSX.Element } = {
+  [NavBarLinksEnum.TEAM]: <Team />,
+  [NavBarLinksEnum.TAVERN]: <Tavern />,
+  [NavBarLinksEnum.WORLD]: <World />,
+  [NavBarLinksEnum.INN]: <Inn />,
+}
+
 function App() {
   return (
-    <div className="App">
-      <NavBar />
-      <BrowserRouter>
+    <BrowserRouter>
+      <div className="App">
+        <NavBar />
         <Routes>
           <Route path="/" element={<DefaultPage />} />
-          <Route path="/team" element={<Team />} />
-          <Route path="/tavern" element={<Tavern />} />
-          <Route path="/world" element={<World />} />
-          <Route path="/inn" element={<Inn />} />
+          {Object.values(NavBarLinksEnum).map((navBarLink, idx) => (
+            <Route key={idx} path={navBarLink} element={navBarLinkElements[navBarLink]} />
+          ))}
         </Routes>
-      </BrowserRouter>
-    </div>
+      </div>
+    </BrowserRouter>
   )
 }
 

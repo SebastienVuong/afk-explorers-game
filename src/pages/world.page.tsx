@@ -1,9 +1,10 @@
 import { BaseScreen } from "../shared/base-screen.component"
+import { Title } from "../shared/title.component"
 
 export const World = () => {
   return (
     <BaseScreen>
-      WORLD
+      <Title title="World" />
     </BaseScreen>
   )
 }

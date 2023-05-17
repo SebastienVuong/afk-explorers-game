@@ -1,15 +1,24 @@
 import { Nav, Navbar } from "react-bootstrap"
+import { Link } from "react-router-dom"
 
-const navBarLinks = [
-  { label: "Your Team", value: "/team" },
-  { label: "Tavern", value: "/tavern" },
-  { label: "World", value: "/world" },
-  { label: "Inn", value: "/inn" }]
+export enum NavBarLinksEnum {
+  TEAM = "/team",
+  TAVERN = "/tavern",
+  WORLD = "/world",
+  INN = "/inn",
+}
+
+const navBarLinkLabels: { [key in NavBarLinksEnum]: string } = {
+  [NavBarLinksEnum.TEAM]: "Your Team",
+  [NavBarLinksEnum.TAVERN]: "Tavern",
+  [NavBarLinksEnum.WORLD]: "World",
+  [NavBarLinksEnum.INN]: "Inn",
+}
 
 export const NavBar = () => (
   <Navbar bg="light" expand="lg" style={{ display: "flex", flexDirection: "row", justifyContent: "space-evenly" }}>
-    {navBarLinks.map(({ label, value }, idx) => (
-      <Nav.Link key={idx} href={value}>{label}</Nav.Link>
+    {Object.values(NavBarLinksEnum).map((navBarLink, idx) => (
+      <Link key={idx} to={navBarLink}>{navBarLinkLabels[navBarLink]}</Link>
     ))}
   </Navbar>
 )

@@ -1,5 +1,4 @@
-import { useAtomValue } from "jotai"
-import { IHero, heroesAtom } from "../atoms/heroes.atom"
+import { IHero } from "../atoms/heroes.atom"
 import { generateNumber } from "./generate-number"
 
 const HERO_HP_BOUNDARIES = {
@@ -13,27 +12,26 @@ const HERO_EARNINGS_BOUNDARIES = {
 }
 
 interface IGenerateHeroProps {
+  id: number
   name: string
   maxHp?: number
   earnings?: number
 }
 
-export const generateHero = ({ name, maxHp: presetMaxHp, earnings }: IGenerateHeroProps): IHero => {
-  const heroes = useAtomValue(heroesAtom)
-  const highestHeroId = heroes.reduce(
-    (highestId, hero) => (hero.id > highestId ? hero.id : highestId),
-    0,
-  )
-  const uniqueHeroId = highestHeroId + 1
-
+export const generateHero = ({
+  id,
+  name,
+  maxHp: presetMaxHp,
+  earnings,
+}: IGenerateHeroProps): IHero => {
   const maxHp =
     presetMaxHp ||
     generateNumber({
       min: HERO_HP_BOUNDARIES.min,
-      max: HERO_EARNINGS_BOUNDARIES.max,
+      max: HERO_HP_BOUNDARIES.max,
     })
   return {
-    id: uniqueHeroId,
+    id,
     name,
     hp: maxHp,
     maxHp,

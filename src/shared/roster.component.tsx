@@ -1,6 +1,6 @@
 import { useAtomValue } from "jotai";
 import { heroesAtom } from "../atoms/heroes.atom";
-import { HeroCard } from "../shared/hero-card.component";
+import { HeroCard } from "./hero-card.component";
 
 export const RosterSection = () => {
   const heroes = useAtomValue(heroesAtom);

@@ -1,20 +1,16 @@
-import { useAtom } from "jotai"
+import { useAtomValue } from "jotai"
 import { BaseScreen } from "../shared/base-screen.component"
-import { heroesAtom } from "../atoms/heroes.atom"
 import { goldAtom } from "../atoms/gold.atom"
+import { RosterSection } from "../shared/roster.component"
+import { Title } from "../shared/title.component"
 
 export const Team = () => {
-  const [heroes, _setHeroes] = useAtom(heroesAtom)
-  const [gold, _setGold] = useAtom(goldAtom)
+  const gold = useAtomValue(goldAtom)
   return (
     <BaseScreen>
-      YOUR TEAM
-      {heroes.map(({ name, id }) => (
-        <div key={id}>
-          {name}
-        </div>
-      ))}
-      Total Gold: {gold}
+      <Title title="Your team" />
+      <RosterSection />
+      <h4>Total Gold: {gold}</h4>
     </BaseScreen>
   )
 }

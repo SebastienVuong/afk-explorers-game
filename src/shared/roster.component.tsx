@@ -1,11 +1,13 @@
-import { useAtomValue } from "jotai";
-import { heroesAtom } from "../atoms/heroes.atom";
+import { IHero, } from "../atoms/heroes.atom";
 import { HeroCard } from "./hero-card.component";
-import { useState } from "react";
 
-export const RosterSection = () => {
-  const heroes = useAtomValue(heroesAtom);
-  const [selectedHeroId, setSelectHeroId] = useState<number>()
+interface IRosterSectionProps {
+  heroes: IHero[];
+  activeHeroId?: number;
+  onHeroClick?: (heroId: number) => void;
+}
+
+export const RosterSection = ({ heroes, activeHeroId, onHeroClick }: IRosterSectionProps) => {
   return (
     <>
       <h2>Your Team:</h2>
@@ -14,9 +16,9 @@ export const RosterSection = () => {
           <HeroCard
             key={hero.id}
             hero={hero}
-            onClick={() => setSelectHeroId(hero.id)}
-            isSelected={hero.id === selectedHeroId}
+            isSelected={hero.id === activeHeroId}
             isDisabled={hero.hp == 0}
+            {...onHeroClick ? { onClick: () => onHeroClick(hero.id) } : {}}
           />)}
       </div>
     </>

@@ -10,7 +10,7 @@ export const Tavern = () => {
   return (
     <BaseScreen>
       <Title title="Tavern" />
-      <RosterSection />
+      <RosterSection heroes={heroes} />
       <RecruitmentSection />
     </BaseScreen>
   )

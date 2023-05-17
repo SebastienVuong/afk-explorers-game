@@ -9,7 +9,7 @@ interface IRosterSectionProps {
 
 export const RosterSection = ({ heroes, activeHeroId, onHeroClick }: IRosterSectionProps) => {
   return (
-    <>
+    <div>
       <h2>Your Team:</h2>
       <div className="d-flex flex-row" style={{ gap: 20, flexWrap: "wrap" }}>
         {heroes.map((hero) =>
@@ -21,7 +21,7 @@ export const RosterSection = ({ heroes, activeHeroId, onHeroClick }: IRosterSect
             {...onHeroClick ? { onClick: () => onHeroClick(hero.id) } : {}}
           />)}
       </div>
-    </>
+    </div>
   );
 };
 

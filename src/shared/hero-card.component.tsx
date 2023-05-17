@@ -4,31 +4,52 @@ interface IHeroCardProps {
   hero: IHero;
   onClick?: () => void
   isSelected?: boolean
+  isDisabled?: boolean
 }
 
-export const HeroCard = ({ hero: { name, id, hp, maxHp, earnings }, onClick, isSelected }: IHeroCardProps) => (
-  <div
-    className="card"
-    style={{
-      width: "300px",
-      backgroundColor: "sandybrown",
-      borderRadius: "10px",
-      border: "2px solid skyblue",
-      transition: "box-shadow 0.3s",
-      ...(isSelected && { boxShadow: "0 0 5px 2px rgba(0, 0, 0, 0.3)" })
-    }}
+const getHpColor = ({ hp, maxHp }: { hp: number, maxHp: number }) => {
+  const percentage = hp / maxHp;
+  if (percentage > 0.2) {
+    return "green";
+  }
+  if (percentage > 0) {
+    return "yellow";
+  }
+  return "red";
+}
+
+export const HeroCard = ({ hero: { name, id, hp, maxHp, earnings }, onClick, isSelected, isDisabled }: IHeroCardProps) => (
+  <ListItemCard
+    className={[onClick && "clickable-card", isSelected && "selected"].filter(Boolean).join(" ")}
+    style={(isDisabled ? { opacity: 0.5 } : {})}
     onClick={onClick}
   >
-    <div className="card-body d-flex flex-column" style={{ gap: 10 }}>
+    <div className="card-body d-flex flex-column justify-content-around">
       <strong className="card-title">
         {name}
         <span style={{ fontWeight: "normal", fontSize: "12px", paddingLeft: "4px" }}>{`(Hero ID: ${id})`}</span>
       </strong>
       <div className="d-flex flex-column ">
-        <span>{`HP: ${hp}/${maxHp}`}</span>
+        <span style={{ color: getHpColor({ hp, maxHp }) }}>{`HP: ${hp} /${maxHp}`}</span >
         <span>{`Earnings: ${earnings} gold/s`}</span>
-      </div>
-    </div>
-  </div>
+      </div >
+    </div >
+  </ListItemCard >
 )
 
+interface IListItemCardProps {
+  className?: string
+  children: React.ReactNode
+  onClick?: () => void
+  style?: React.CSSProperties
+}
+
+const ListItemCard = ({ className, children, onClick, style }: IListItemCardProps) => (
+  <div
+    className={["card list-item-card", className].join(" ")}
+    style={style}
+    onClick={onClick}
+  >
+    {children}
+  </div>
+)

@@ -47,3 +47,31 @@
 .read-the-docs {
   color: #888;
 }
+
+.card.list-item-card { 
+  height: 200px;
+  width: 300px;
+  background-color: sandybrown;
+  border-radius: 10px;
+  border: 2px solid orange;
+}
+
+.clickable-card {
+  cursor: pointer;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+  opacity: 0.9;
+}
+
+.clickable-card:hover, .clickable-card.selected {
+  transform: translateY(4px);
+  box-shadow: none;
+  height: 196px;
+  border-width: 5px;
+  opacity: 1;
+}
+
+.clickable-card:hover:not(.selected) { 
+  /* border: 5px solid #646cff; */
+  border-color: yellow;
+}

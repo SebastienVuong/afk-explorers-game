@@ -4,7 +4,6 @@ import { goldAtom } from "../../atoms/gold.atom";
 import { Button } from "react-bootstrap";
 import { SECONDARY_SHIP_COST } from "./world.ship-beta.component";
 
-
 export const LockerShipBody = () => {
   const [gold, setGold] = useAtom(goldAtom);
   const [ship, setShip] = useAtom(shipBetaAtom);

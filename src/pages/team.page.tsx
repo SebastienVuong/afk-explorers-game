@@ -22,9 +22,9 @@ export const Team = () => {
           activeHeroId={selectedHeroId}
           onHeroClick={(heroId) => setSelectedHeroId(heroId)}
         />
-        {selectedHero &&
-          <div style={{ width: "400px", margin: "50px" }}>
-            <div className="card" style={{ height: "100%", width: "400px", backgroundColor: "burlywood" }}>
+        {
+          <div style={{ width: selectedHero ? "400px" : "0", margin: "50px", transition: "width 0.3s ease" }}>
+            {selectedHero && <div className="card" style={{ height: "100%", width: "100%", backgroundColor: "burlywood" }}>
               <div className="card-body d-flex justify-content-center align-items-center" style={{ backgroundColor: "peachpuff" }}>
                 <Image
                   style={{ width: "300px", height: "300px" }}
@@ -36,7 +36,7 @@ export const Team = () => {
                 <p className="card-text">HP: {selectedHero.hp}/{selectedHero.maxHp}</p>
                 <p className="card-text">Earnings: {selectedHero.earnings} gold/s</p>
               </div>
-            </div>
+            </div>}
           </div>}
       </div>
       <h4>Total Gold: {gold}</h4>

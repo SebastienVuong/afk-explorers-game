@@ -58,7 +58,7 @@
 .clickable-card {
   cursor: pointer;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.4s, box-shadow 0.4s;
   opacity: 0.85;
 }
 
@@ -71,7 +71,7 @@
 }
 
 .clickable-card:hover:not(.selected) { 
-  border-color: yellow;
+  border-color: rgb(227, 121, 27);
 }
 
 .boat-container {

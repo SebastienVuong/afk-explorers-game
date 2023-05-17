@@ -13,7 +13,7 @@ export const LockerShipBody = () => {
     setShip({ ...ship, isActive: true });
   };
   return (
-    <div className="card list-item-card justify-content-between">
+    <div className="card list-item-card justify-content-between bg-white">
       You can unlock this ship for {SECONDARY_SHIP_COST} gold.
       <Button className="btn btn-primary" disabled={gold < SECONDARY_SHIP_COST} onClick={unlockShip}>Unlock</Button>
     </div>

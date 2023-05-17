@@ -9,10 +9,10 @@ export enum NavBarLinksEnum {
 }
 
 const navBarLinkLabels: { [key in NavBarLinksEnum]: string } = {
-  [NavBarLinksEnum.TEAM]: "Your Team",
-  [NavBarLinksEnum.TAVERN]: "Tavern",
-  [NavBarLinksEnum.WORLD]: "World",
-  [NavBarLinksEnum.INN]: "Inn",
+  [NavBarLinksEnum.TEAM]: "👥 Your Team",
+  [NavBarLinksEnum.TAVERN]: "🍻 Tavern",
+  [NavBarLinksEnum.WORLD]: "🗺️ World",
+  [NavBarLinksEnum.INN]: "🛏️ Inn",
 }
 
 export const NavBar = () => (

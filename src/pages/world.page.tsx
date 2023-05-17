@@ -8,12 +8,22 @@ import { goldAtom } from "../atoms/gold.atom"
 import { ShipAlpha } from "./components/world.ship-alpha.component"
 import { ShipBeta } from "./components/world.ship-beta.component"
 import { BoardShipModal } from "./components/world.board-ship.modal"
+import { shipAlphaAtom, shipBetaAtom } from "../atoms/ship.atom"
+import { useAFKHeroEarnings } from "../hooks/use-afk-hero-earnings.hook"
 
 export const World = () => {
   const gold = useAtomValue(goldAtom)
   const heroes = useAtomValue(heroesAtom)
   const [selectedHeroId, setSelectedHeroId] = useState<number>()
   const selectedHero = heroes.find(hero => hero.id === selectedHeroId)
+
+  const shipAlpha = useAtomValue(shipAlphaAtom)
+  const shipAlphaLeadingHero = heroes.find(hero => hero.id === shipAlpha.leadingHeroId)
+  useAFKHeroEarnings(shipAlphaLeadingHero)
+
+  const shipBeta = useAtomValue(shipBetaAtom)
+  const shipBetaLeadingHero = heroes.find(hero => hero.id === shipBeta.leadingHeroId)
+  useAFKHeroEarnings(shipBetaLeadingHero)
 
   return (
     <BaseScreen>

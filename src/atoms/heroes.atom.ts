@@ -1,4 +1,4 @@
-import { atom } from "jotai"
+import { atomWithStorage } from "jotai/utils"
 
 export interface IHero {
   id: number
@@ -16,4 +16,4 @@ const mockHeroes: IHero[] = [
   { id: 15, name: "Magneta", hp: 45, maxHp: 45, earnings: 17 },
 ]
 
-export const heroesAtom = atom<IHero[]>(mockHeroes)
+export const heroesAtom = atomWithStorage<IHero[]>("heroes", mockHeroes)

@@ -1,16 +1,16 @@
-import { atom } from "jotai"
+import { atomWithStorage } from "jotai/utils"
 
 interface IShipProps {
   isActive?: boolean
   leadingHeroId?: number
 }
 
-export const shipAlphaAtom = atom<IShipProps>({
+export const shipAlphaAtom = atomWithStorage<IShipProps>("shipAlpha", {
   isActive: true,
   leadingHeroId: undefined,
 })
 
-export const shipBetaAtom = atom<IShipProps>({
+export const shipBetaAtom = atomWithStorage<IShipProps>("shipBeta", {
   isActive: false,
   leadingHeroId: undefined,
 })

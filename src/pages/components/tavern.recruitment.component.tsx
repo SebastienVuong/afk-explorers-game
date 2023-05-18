@@ -21,6 +21,7 @@ export const RecruitmentSection = () => {
     const newHero: IHero = generateHero({ id: uniqueHeroId, name: newHeroName });
     setGold(gold - RECRUITMENT_COST);
     setHeroes([...heroes, newHero]);
+    setNewHeroName("");
   };
 
 

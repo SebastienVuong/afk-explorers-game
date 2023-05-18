@@ -31,7 +31,7 @@ export const HeroCard = ({ hero: { name, id, hp, maxHp, earnings }, onClick, isS
         <span style={{ fontWeight: "normal", fontSize: "12px", paddingLeft: "4px" }}>{`(Hero ID: ${id})`}</span>
       </strong>
       <div className="d-flex flex-column ">
-        <span style={{ color: getHpColor({ hp, maxHp }) }}>{`HP: ${hp} /${maxHp}`}</span >
+        <span style={{ color: getHpColor({ hp, maxHp }) }}>{`HP: ${hp}/${maxHp}`}</span >
         <span>{`Earnings: ${earnings} gold/s`}</span>
       </div >
     </div >
